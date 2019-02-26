@@ -1,0 +1,15 @@
+#Naviguation menu
+home: "Accueil"
+help: "Assistances"
+connection: "Connexion"
+#login
+username: "Nom d'utilisateur"
+password : "Mot de passe"
+repeat_password: "Répétez le mot de passe"
+access_account : "Accéder à mon compte"
+login: "Se connecter"
+register: "Enregistrement"
+stu_nbr: "N° Etudiant"
+email: "E-Mail"
+accept_cgu: "J'accepte les <a href='#'>Conditions Générales d'utilisations</a>"
+recognize_student: "Je confirme que je suis bien étudiant à %name%"

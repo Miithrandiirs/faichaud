@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ getTitle() }} | {{ "Connection" }}{% endblock %}
+
+{% block body %}
+<main id="login">
+    <section class="box">
+        <header>
+            <div class="title">
+                <h2>{{ "access_account"|trans }}</h2>
+            </div>
+        </header>
+
+        <div class="content">
+
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+            <div id="loginArea">
+                <h3>{{ "connection"|trans }}</h3>
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="for.connexion.username">{{ "username"|trans }}</label>
+                        <input type="text" id="for.connexion.username" name="username" value="{{ last_username }}" autofocus required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="for.connexion.password">{{ "password"|trans }}</label>
+                        <input type="password" id="for.connexion.password" name="password" required/>
+                    </div>
+
+                    <button>{{ "login"|trans }}</button>
+                </form>
+            </div>
+            <div id="registerArea">
+                <h3>{{ "register"|trans }}</h3>
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="for.register.username">{{ "username"|trans }}</label>
+                        <input type="text" id="for.register.username" name="username"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="for.register.etudiant">{{ "stu_nbr"|trans }}</label>
+                        <input type="text" id="for.register.etudiant" name="username"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="for.email">{{ "email"|trans }}</label>
+                        <input type="email" id="for.email" name="password"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="for.register.password">{{ "password"|trans }}</label>
+                        <input type="password" id="for.register.password" name="password"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="for.register.password.confirm">{{ "repeat_password"|trans }}</label>
+                        <input type="password" id="for.register.password.confirm" name="password"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label><input type="checkbox"> {{ "accept_cgu"|trans|raw }}</label>
+                        <label><input type="checkbox"> {{ "recognize_student"|trans({"%name%": getTitle()}) }}</label>
+                    </div>
+
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+
+
+                    <button>M'enregistrer</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+</main>
+{% endblock %}

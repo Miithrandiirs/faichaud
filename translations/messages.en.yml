@@ -1,0 +1,15 @@
+#Naviguation menu
+home: "Home"
+help: "Help"
+connection: "Connection"
+#Login
+username: "Username"
+password: "Password"
+repeat_password: "Repeat password"
+access_account: "Go to my account"
+login: "Log in"
+register: "Registration"
+stu_nbr: "Student Number"
+email: "E-Mail"
+accept_cgu: "I agree with <a href='#'>Terms of contract</a>"
+recognize_student: "I confirm I am student of %name%"

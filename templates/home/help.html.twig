@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ getTitle() }} | {{ "help"|trans }}{% endblock %}
+
+{% block body %}
+    <main id="help">
+        <section class="box">
+            <header>
+                <div class="title">
+                    <h2>Demande d'aide</h2>
+                </div>
+            </header>
+
+            <div class="content">
+                <form method="POST">
+                    <div class="form-group divised-2">
+                        <div class="divised-content">
+                            <label for="nEtudiant">N° Étudiant</label>
+                            <input type="text" id="nEtudiant" name="etudiant"/>
+                        </div>
+                        <p>OU</p>
+                        <div class="divised-content">
+                            <label for="Email">Email</label>
+                            <input type="email" id="Email" name="email"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assistance">Choisir le type d'assistance</label>
+                        <select id="assistance" name="assistance">
+                            <option>Problème d'enregistrement</option>
+                            <option>Déclarer un incident</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assistanceDesc">Choisir le type d'assistance</label>
+                        <textarea name="assistanceDesc" id="assistanceDesc" rows="10">
+
+                    </textarea>
+                    </div>
+
+                    <p>Veuillez noter que votre adresse IP sera sauvegardée.</p>
+
+                    <button>Envoyer ma demande</button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+{% endblock %}
